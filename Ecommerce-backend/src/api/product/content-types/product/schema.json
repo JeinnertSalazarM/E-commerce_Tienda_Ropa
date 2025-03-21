@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "productName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "productName"
+    },
+    "descriptionProduct": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "priceProduct": {
+      "type": "decimal"
+    },
+    "season": {
+      "type": "enumeration",
+      "enum": [
+        "Festival Folclórico y Reinado Nacional del Bambuco",
+        "Ferias Artesanales",
+        "Fiestas de San Juan y San Pedro",
+        "Cumpleaños de Neiva",
+        "Fiesta de San Roque",
+        "Fiestas de la Inmaculada Concepción"
+      ]
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "size_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::size-product.size-product",
+      "mappedBy": "product"
+    }
+  }
+}

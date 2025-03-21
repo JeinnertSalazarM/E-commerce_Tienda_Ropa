@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "size_products",
+  "info": {
+    "singularName": "size-product",
+    "pluralName": "size-products",
+    "displayName": "sizeProduct",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "talla": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "talla"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "size_products"
+    }
+  }
+}
