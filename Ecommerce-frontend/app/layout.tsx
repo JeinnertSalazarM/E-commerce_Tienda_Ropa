@@ -1,6 +1,7 @@
 
 
 import Footer from "@/components/Footer";
+
 import Navbar from "@/components/ui/navbar";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
@@ -24,10 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${urbanist.className}`}
       >
+
         <Navbar></Navbar>
         {children}
         <Footer></Footer>

@@ -6,6 +6,8 @@ import MenuList from './MenuList';
 
 
 
+
+
 const Navbar = () => {
     const router = useRouter();
     return (
@@ -25,6 +27,7 @@ const Navbar = () => {
 
                 <Heart strokeWidth='1' className='cursor-pointer' onClick={() => router.push("/loved-products")}></Heart>
                 <User strokeWidth='1' className='cursor-pointer' ></User>
+
 
             </div >
         </div >
