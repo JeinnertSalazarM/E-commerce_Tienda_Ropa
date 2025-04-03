@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
+import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselItem } from "./ui/carousel";
 
 export const dataCarouselTop = [
@@ -37,17 +38,21 @@ const CarouselTextBanner = () => {
     return (
         <div className="bg-gray-200">
             <Carousel className="mx-auto max-w-4xl h-full">
-                {dataCarouselTop.map((item) => (
-                    <CarouselItem key={item.id} onClick={() => router.push(item.link)}
-                        className="flex flex-col justify-center items-center p-4 h-full">
-                        <h1 className="font-bold text-gray-800 text-2xl">{item.title}</h1>
-                        <p className="text-gray-600">{item.description}</p>
 
+                {dataCarouselTop.map(({ id, title, description, link }) => (
+                    <CarouselItem key={id} onClick={() => router.push(link)} className="cursor-pointer">
+                        <div>
+                            <Card className="bg-transparent shadow-none border-none">
+                                <CardContent className="flex flex-col justify-center items-center p-2 text-center">
+                                    <p className="sm:text-lg text-wrap">{title}</p>
+                                    <p className="text-xs sm:text-sm text-wrap">{description}</p>
+                                </CardContent>
+
+                            </Card>
+                        </div>
                     </CarouselItem>
                 ))}
-                <CarouselItem>
 
-                </CarouselItem>
             </Carousel>
         </div >
     );

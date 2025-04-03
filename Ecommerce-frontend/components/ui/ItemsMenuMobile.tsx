@@ -20,9 +20,10 @@ const ItemsMenuMobile = () => {
 
             </PopoverContent>
         </Popover>
-
-    );
+    )
 }
+
+
 
 
 export default ItemsMenuMobile;    
